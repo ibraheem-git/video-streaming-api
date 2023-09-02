@@ -1,0 +1,31 @@
+<h1>Hi <%= user.name %></h1>
+<p>
+    Pages:
+    <ul>
+        <li><a href="/dashb">Home</a></li>
+        <li><a href="/edit">Edit Profile</a></li>
+        <li><a href="/logout">Logout</a></li>
+    </ul>
+</p>
+
+<p>
+    Recently Viewed Videos:
+    <ul>
+    <% recent_videos.forEach((s) => { %>
+        <li><a href="/videos?name=<%= s.name %>"><%= s.name %></a></li>
+   <% }) %>
+    </ul>
+</p>
+
+<p>
+    Videos:
+    <ul>
+        <li><a href="/videos?name=Data Science 3_3">Data Science 3_3</a></li>
+        <li><a href="/videos?name=VID-20230424-WA0000">VID-20230424-WA0000</a></li>
+    </ul>
+</p>
+
+
+<% if(name !== '') { %>
+    <video src="/stream?name=<%= name %>" autoplay controls></video>
+<% } %>
